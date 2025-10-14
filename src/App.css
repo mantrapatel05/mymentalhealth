@@ -427,3 +427,123 @@ input[type="text"], input[type="number"] {
     .bento-grid, .mood-grid, .pomo-grid { grid-template-columns: 1fr; }
     #dashboardHeader { flex-direction: column; gap: 1rem; }
 }
+/* --- 1. Global Variables: Define the default (light) theme first --- */
+:root {
+  /* Colors for Light Mode (Default) */
+  --bg-primary: #ffffff; /* Whole page background: White */
+  --bg-secondary: #f7f7f7; /* Card/Panel background: Off-white */
+  --text-primary: #000000; /* Main text color: Black */
+  --text-secondary: #666666; /* Muted text color */
+  --border-color: #e0e0e0; /* Borders/Separators */
+  --input-bg: #ffffff; /* Input background */
+  --bento-spotlight-color: rgba(255, 255, 255, 0.1);
+  --btn-bg: #eeeeee;
+  --btn-hover-bg: #dddddd;
+
+  /* Relaxation View Colors (Light) */
+  --relax-cube-color: #333333;
+  --relax-line-color: rgba(0, 0, 0, 0.1);
+  --relax-shape-1: #ff7e5f; /* Coral */
+  --relax-shape-2: #feb47b; /* Peach */
+  --relax-shape-3: #ffc72c; /* Gold */
+}
+
+/* --- 2. Dark Mode Overrides: Set the opposite colors for the 'dark' class --- */
+/* The 'dark' class is applied to the <html> tag by your app.js */
+.dark {
+  /* Colors for Dark Mode */
+  --bg-primary: #121212; /* Whole page background: Dark Black */
+  --bg-secondary: #1e1e1e; /* Card/Panel background: Darker Gray */
+  --text-primary: #ffffff; /* Main text color: White */
+  --text-secondary: #aaaaaa; /* Muted text color */
+  --border-color: #333333; /* Dark Borders/Separators */
+  --input-bg: #2a2a2a; /* Input background */
+  --bento-spotlight-color: rgba(255, 255, 255, 0.05);
+  --btn-bg: #333333;
+  --btn-hover-bg: #444444;
+
+  /* Relaxation View Colors (Dark) */
+  --relax-cube-color: #ffffff;
+  --relax-line-color: rgba(255, 255, 255, 0.1);
+  --relax-shape-1: #00bcd4; /* Cyan */
+  --relax-shape-2: #3f51b5; /* Indigo */
+  --relax-shape-3: #9c27b0; /* Purple */
+}
+
+/* --- 3. Apply the variables to your HTML structure --- */
+
+/* Apply to the main body/page */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition on toggle */
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif; /* Add a default font */
+}
+
+/* Ensure the main app container inherits theme colors */
+.app {
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+}
+
+/* Apply to major card/panel components (QuoteCarousel, TodoList, MoodTracker sections) */
+.panel, 
+.chart-panel, 
+.question-panel, 
+.pomo-panel {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header and other specific elements */
+.brand h1, .stat-label {
+    color: var(--text-primary);
+}
+.lead, .small, .muted {
+    color: var(--text-secondary);
+}
+
+/* Inputs and Buttons */
+.todo-input, .mood-question-card .mood-options button, .pomo-btn, .btn {
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+.todo-input {
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+}
+/* Ensure links and button text are visible */
+button, .btn {
+    color: var(--text-primary);
+    background-color: var(--btn-bg);
+    border: 1px solid var(--border-color);
+}
+button:hover, .btn:hover {
+    background-color: var(--btn-hover-bg);
+}
+
+/* Specific elements like the Dock */
+.dock {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+}
+
+/* Relaxation View specifics */
+.splash-cursor {
+    background-color: var(--text-primary);
+}
+.magnetic-lines-svg line {
+    stroke: var(--relax-line-color);
+}
+.cube {
+    background-color: var(--relax-cube-color);
+}
+.shape-blur-1 { background: var(--relax-shape-1); }
+.shape-blur-2 { background: var(--relax-shape-2); }
+.shape-blur-3 { background: var(--relax-shape-3); }
+.shape-blur-text { color: var(--text-primary); }

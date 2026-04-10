@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/mymentalhealth/static/css/main.3b71cc2a.css",
+    "main.js": "/mymentalhealth/static/js/main.47393dc0.js",
+    "static/js/453.c5a1f229.chunk.js": "/mymentalhealth/static/js/453.c5a1f229.chunk.js",
+    "index.html": "/mymentalhealth/index.html",
+    "main.3b71cc2a.css.map": "/mymentalhealth/static/css/main.3b71cc2a.css.map",
+    "main.47393dc0.js.map": "/mymentalhealth/static/js/main.47393dc0.js.map",
+    "453.c5a1f229.chunk.js.map": "/mymentalhealth/static/js/453.c5a1f229.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3b71cc2a.css",
+    "static/js/main.47393dc0.js"
+  ]
+}
